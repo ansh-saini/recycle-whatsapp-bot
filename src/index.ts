@@ -14,6 +14,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPEN_AI_API_KEY,
 });
 
+app.get("/", (req, res) => {
+  res.send("Hi!");
+});
+
 // Endpoint to handle incoming WhatsApp messages
 app.post("/whatsapp", async (req: Request, res: Response) => {
   const incomingMsg = req.body.Body || "";
